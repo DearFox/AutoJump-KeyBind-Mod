@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "autojump-keydind-mod",
+  "version": "${version}",
+  "name": "AutoJump KeyBind Mod",
+  "description": "Set up hotkey for autojump.",
+  "authors": [
+    "DearFox"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/autojump-keybind-mod",
+    "sources": "https://github.com/DearFox/AutoJump-KeyBind-Mod",
+    "issues": "https://github.com/DearFox/AutoJump-KeyBind-Mod/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/AutoJump-KeyBind-mod/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "name.owo.dearfox.autojumpkeybindmod.client.AutoJumpKeyBindModClient"
+    ],
+    "main": [
+      "name.owo.dearfox.autojumpkeybindmod.AutoJumpKeyBindMod"
+    ]
+  },
+  "mixins": [
+    "AutoJump-KeyBind-mod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "fabric": "*",
+    "minecraft": "1.18.2",
+    "fabric-key-binding-api-v1": "*"
+  }
+}
