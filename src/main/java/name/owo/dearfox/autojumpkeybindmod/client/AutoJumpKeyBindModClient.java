@@ -24,13 +24,20 @@ public class AutoJumpKeyBindModClient implements ClientModInitializer {
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (auto_jump_key_bind.wasPressed()) {
-                MinecraftClient.getInstance().options.autoJump= !MinecraftClient.getInstance().options.autoJump;
+                //MinecraftClient.getInstance().options.autoJump= !MinecraftClient.getInstance().options.autoJump; //Старая реализация переключения авто прыжка. Не работает на снапшотах.
+                if (MinecraftClient.getInstance().options.getAutoJump().getValue()) {
+                    MinecraftClient.getInstance().options.getAutoJump().setValue(false);
+                } else {
+                    MinecraftClient.getInstance().options.getAutoJump().setValue(true);
+                }
             };
             while (auto_jump_key_bind_on.wasPressed()) {
-                MinecraftClient.getInstance().options.autoJump=true;
+                //MinecraftClient.getInstance().options.autoJump=true;
+                MinecraftClient.getInstance().options.getAutoJump().setValue(true);
             };
             while (auto_jump_key_bind_off.wasPressed()) {
-                MinecraftClient.getInstance().options.autoJump=false;
+                //MinecraftClient.getInstance().options.autoJump=false;
+                MinecraftClient.getInstance().options.getAutoJump().setValue(false);
             }
         });
     }
