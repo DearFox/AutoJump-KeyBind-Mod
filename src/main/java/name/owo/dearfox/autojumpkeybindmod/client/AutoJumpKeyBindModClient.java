@@ -31,12 +31,12 @@ public class AutoJumpKeyBindModClient implements ClientModInitializer {
                     ;
                     while (auto_jump_key_bind_on.wasPressed()) {
                         MinecraftClient.getInstance().options.autoJump = true;
-                        client.player.sendMessage(new KeybindText("Auto Jump §aOn"), true);
+                        client.player.sendMessage(new TranslatableText("option.auto-jump-key-bind.key.on"), true);
                     }
                     ;
                     while (auto_jump_key_bind_off.wasPressed()) {
                         MinecraftClient.getInstance().options.autoJump = false;
-                        client.player.sendMessage(new KeybindText("Auto Jump §cOff"), true);
+                        client.player.sendMessage(new TranslatableText("option.auto-jump-key-bind.key.off"), true);
                     }
                 });
             }
