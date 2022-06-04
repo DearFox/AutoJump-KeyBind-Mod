@@ -1,6 +1,7 @@
 package name.owo.dearfox.autojumpkeybindmod.client;
 
 import net.minecraft.text.KeybindText;
+import net.minecraft.text.TranslatableText;
 import org.lwjgl.glfw.GLFW;
 
 import net.fabricmc.api.ClientModInitializer;
@@ -25,17 +26,17 @@ public class AutoJumpKeyBindModClient implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (auto_jump_key_bind.wasPressed()) {
                 MinecraftClient.getInstance().options.autoJump = !MinecraftClient.getInstance().options.autoJump;
-                        client.player.sendMessage(new KeybindText("Auto Jump Toggled") , true);
+                        client.player.sendMessage((new TranslatableText((MinecraftClient.getInstance().options.autoJump)?"autojumpkeybindmod.autojump.toggled.on":"autojumpkeybindmod.autojump.toggled.off")) , true);
                     }
                     ;
                     while (auto_jump_key_bind_on.wasPressed()) {
                         MinecraftClient.getInstance().options.autoJump = true;
-                        client.player.sendMessage(new KeybindText("§2Auto Jump On"), true);
+                        client.player.sendMessage(new KeybindText("Auto Jump §2On"), true);
                     }
                     ;
                     while (auto_jump_key_bind_off.wasPressed()) {
                         MinecraftClient.getInstance().options.autoJump = false;
-                        client.player.sendMessage(new KeybindText("§cAuto Jump Off"), true);
+                        client.player.sendMessage(new KeybindText("Auto Jump §cOff"), true);
                     }
                 });
             }
