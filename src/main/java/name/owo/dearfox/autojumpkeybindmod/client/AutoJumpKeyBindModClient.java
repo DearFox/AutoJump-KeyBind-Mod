@@ -1,5 +1,7 @@
 package name.owo.dearfox.autojumpkeybindmod.client;
 
+import net.minecraft.text.KeybindText;
+import net.minecraft.text.TranslatableText;
 import org.lwjgl.glfw.GLFW;
 
 import net.fabricmc.api.ClientModInitializer;
@@ -7,7 +9,6 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
 import net.minecraft.client.option.KeyBinding;
-//import net.minecraft.text.LiteralText;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.client.MinecraftClient;
 
@@ -24,14 +25,19 @@ public class AutoJumpKeyBindModClient implements ClientModInitializer {
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (auto_jump_key_bind.wasPressed()) {
-                MinecraftClient.getInstance().options.autoJump= !MinecraftClient.getInstance().options.autoJump;
-            };
-            while (auto_jump_key_bind_on.wasPressed()) {
-                MinecraftClient.getInstance().options.autoJump=true;
-            };
-            while (auto_jump_key_bind_off.wasPressed()) {
-                MinecraftClient.getInstance().options.autoJump=false;
+                MinecraftClient.getInstance().options.autoJump = !MinecraftClient.getInstance().options.autoJump;
+                        client.player.sendMessage((new TranslatableText((MinecraftClient.getInstance().options.autoJump)?"autojumpkeybindmod.autojump.toggled.on":"autojumpkeybindmod.autojump.toggled.off")) , true);
+                    }
+                    ;
+                    while (auto_jump_key_bind_on.wasPressed()) {
+                        MinecraftClient.getInstance().options.autoJump = true;
+                        client.player.sendMessage(new TranslatableText("option.auto-jump-key-bind.key.on"), true);
+                    }
+                    ;
+                    while (auto_jump_key_bind_off.wasPressed()) {
+                        MinecraftClient.getInstance().options.autoJump = false;
+                        client.player.sendMessage(new TranslatableText("option.auto-jump-key-bind.key.off"), true);
+                    }
+                });
             }
-        });
-    }
-}
+        }
