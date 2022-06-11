@@ -1,6 +1,8 @@
 package name.owo.dearfox.autojumpkeybindmod.client;
 
 import net.minecraft.text.KeybindText;
+import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import org.lwjgl.glfw.GLFW;
 
@@ -15,6 +17,8 @@ import net.minecraft.client.MinecraftClient;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 
+import java.util.logging.Logger;
+
 @Environment(EnvType.CLIENT)
 public class AutoJumpKeyBindModClient implements ClientModInitializer {
     @Override
@@ -26,17 +30,18 @@ public class AutoJumpKeyBindModClient implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (auto_jump_key_bind.wasPressed()) {
                 MinecraftClient.getInstance().options.autoJump = !MinecraftClient.getInstance().options.autoJump;
-                        client.player.sendMessage((new TranslatableText((MinecraftClient.getInstance().options.autoJump)?"autojumpkeybindmod.autojump.toggled.on":"autojumpkeybindmod.autojump.toggled.off")) , true);
+                assert client.player != null;
+                client.player.sendMessage(new LiteralText(new TranslatableText("options.autoJump").getString() + ": " + new TranslatableText((MinecraftClient.getInstance().options.autoJump)? "options.on":"options.off").getString()), true);
                     }
-                    ;
                     while (auto_jump_key_bind_on.wasPressed()) {
                         MinecraftClient.getInstance().options.autoJump = true;
-                        client.player.sendMessage(new TranslatableText("option.auto-jump-key-bind.key.on"), true);
+                        assert client.player != null;
+                        client.player.sendMessage(new LiteralText(new TranslatableText("options.autoJump").getString() + ": " + new TranslatableText("options.on").getString()), true);
                     }
-                    ;
                     while (auto_jump_key_bind_off.wasPressed()) {
                         MinecraftClient.getInstance().options.autoJump = false;
-                        client.player.sendMessage(new TranslatableText("option.auto-jump-key-bind.key.off"), true);
+                        assert client.player != null;
+                        client.player.sendMessage(new LiteralText(new TranslatableText("options.autoJump").getString() + ": " + new TranslatableText("options.off").getString()), true);
                     }
                 });
             }

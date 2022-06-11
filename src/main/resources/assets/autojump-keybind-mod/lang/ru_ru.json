@@ -2,7 +2,5 @@
   "option.auto-jump-key-bind.key": "Авто Прыжок вкл/выкл",
   "option.auto-jump-key-bind.key.on": "Авто Прыжок вкл",
   "option.auto-jump-key-bind.key.off": "Авто Прыжок выкл",
-  "option.auto-jump-key-bind.category": "Auto Jump Key bind Mod",
-  "autojumpkeybindmod.autojump.toggled.on": "Автоматический прыжок §aвключен",
-  "autojumpkeybindmod.autojump.toggled.off": "Автоматический прыжок §cотключен"
+  "option.auto-jump-key-bind.category": "Auto Jump Key bind Mod"
 }
