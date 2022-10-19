@@ -1,0 +1,6 @@
+{
+  "option.auto-jump-key-bind.key": "自动跳跃切换",
+  "option.auto-jump-key-bind.key.on": "自动跳跃开启",
+  "option.auto-jump-key-bind.key.off": "自动跳跃关闭",
+  "option.auto-jump-key-bind.category": "自动跳跃键绑定"
+}
