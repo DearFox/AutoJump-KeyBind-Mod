@@ -1,6 +1,6 @@
 {
-  "option.auto-jump-key-bind.key": "Auto Jump Toggle",
-  "option.auto-jump-key-bind.key.on": "Auto Jump On",
-  "option.auto-jump-key-bind.key.off": "Auto Jump Off",
-  "option.auto-jump-key-bind.category": "Auto Jump Keybind Mod"
+  "option.auto-jump-key-bind.key": "Auto Jump on/off",
+  "option.auto-jump-key-bind.key.on": "Auto Jump on",
+  "option.auto-jump-key-bind.key.off": "Auto Jump off",
+  "option.auto-jump-key-bind.category": "Auto Jump Key bind Mod"
 }
