@@ -13,7 +13,7 @@
     "issues": "https://github.com/DearFox/AutoJump-KeyBind-Mod/issues"
   },
   "license": "MIT",
-  "icon": "assets/AutoJump-KeyBind-mod/icon.png",
+  "icon": "assets/autojump-keybind-mod/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
@@ -23,13 +23,14 @@
       "name.owo.dearfox.autojumpkeybindmod.AutoJumpKeyBindMod"
     ]
   },
-  "mixins": [
-    "AutoJump-KeyBind-mod.mixins.json"
-  ],
   "depends": {
-    "fabricloader": ">=0.13.3",
+    "fabricloader": ">=0.15.6",
     "fabric": "*",
+<<<<<<< Updated upstream
     "minecraft": "1.18.*",
+=======
+    "minecraft": "1.20.4",
+>>>>>>> Stashed changes
     "fabric-key-binding-api-v1": "*"
   }
 }
